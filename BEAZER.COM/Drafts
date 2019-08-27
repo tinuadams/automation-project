@@ -1,0 +1,79 @@
+const cucumber = require('cucumber');
+const { expect } = require('chai');
+const login = require('./utils/PROD/login');
+
+
+describe('Navigate to home page', () => {
+   
+    //Navigate to home page
+before(() => {
+browser = await cucumber.launch
+});
+
+page = await browser.newPage();
+await page.goTo(homePage.BeazerURL);
+});
+
+
+descirbe('Navigate to homepage and metro page', () => {
+
+    //click on metro area dropdown menu
+    it('click on drop down menu', () => {
+        page = await dropdown.clickList(homePage)
+    });
+
+    //select option from dropdown
+    it('select Atlanta, GA from drop down menu', () => {
+        page = await dropdown.selectItem(dropDown)
+    });
+
+    //Click Go button
+    it('Navigate to metro page', () => {
+        page = await dropdownButton.clickButton(dropDownBar)
+    });
+
+     //Verify Page Title
+     it('Confirm Title Reads Atlanta, GA', () => {
+         
+     expect (await page.grid()).contains('Tinu New Product')
+    });
+
+    After(() => {
+    await browser.close();  
+    });
+});
+
+
+
+
+
+describe('Login Tests', () => {
+let page;
+let browser;
+this.timeout(60000);
+
+beforeEach(()=>{
+browser = await puppeteer.launch({
+executablePath: '/Applications/Google Chrome'
+});
+
+page = await browser.newPage();
+await page.goto(testData.cpPRODURL);
+});
+
+afterEach(()=>{
+await browser.close();
+});
+
+it('login' () => {
+await app.login(page)
+await page.waitFor(headerLocation.logo);
+expect(await page.title()).contains(testData.cpIndexTitle);
+});
+
+it('sign up' () => {
+await app.login(page)
+await page.waitFor(headerLocation.logo);
+expect(await page.title()).contains(testData.cpIndexTitle);
+});
+});
