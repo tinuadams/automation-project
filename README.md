@@ -1,2 +1,0 @@
-# automation-project
-test
